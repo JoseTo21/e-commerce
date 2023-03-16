@@ -57,8 +57,6 @@ function printProducts(db) {
 
 }
 
-    /*CREANDO LA ANIMACION DEL CARRITO*/
-
 function handleShowCart() {
     const bxcartHTML = document.querySelector(".bx-cart")
     const cartHTML = document.querySelector(".cart")
@@ -67,8 +65,6 @@ function handleShowCart() {
         cartHTML.classList.toggle("cart__show")
     })
 }
-
-    /*CREANDO LA LOGICA DEL CARRITO*/
 
 function addToCartFromProducts(db) {
     const productsHTML = document.querySelector(".products")
@@ -258,6 +254,13 @@ function handleShowMenu() {
     })
 }
 
+function handleDarkMode() {
+    const btnDarkMode = document.querySelector(".bx-moon");
+
+    btnDarkMode.addEventListener("click", function() {
+        document.body.classList.toggle('dark')
+    })
+}
 
 async function main() {
     const db ={
@@ -276,14 +279,7 @@ async function main() {
     hanldePrintAmountProducts(db);
     handleShowMenu()
     transitionNavbar()
-
-    const btnDarkMode = document.querySelector(".bx-moon");
-
-    btnDarkMode.addEventListener("click", function() {
-        document.body.classList.toggle('dark')
-    })
-
-
+    handleDarkMode()
 
 }
 
